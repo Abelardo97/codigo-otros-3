@@ -1,5 +1,11 @@
 /**
- * El programa muestra una lista de produtos
+ * El programa muestra un input en el cual se escribe el nombre de un producto
+ * al presionar el boton se nops mostrará en una lista el producto y sus caracteristicas 
+ * Paso 1: se arreglan las rutas en los links del html
+ * Paso 2: Se arregla el diseño en el html
+ *  Paso 3: las imagenes se colocan dentro de una carpeta
+ * Paso 4: Se aplican las correspondientes modificaciones para que el código funcione
+ * 
  */
 
 
@@ -18,18 +24,18 @@ const lista = document.getElementsByName("lista-de-productos");
 const input = document.querySelector('.input');
 
 for (let i = 0; i < productos.length; i++) {
-  //se cambia la variable por let, se agrega el ;
-  let div = document.createElement("div");
+  //se cambia la variable por const, se agrega el ;
+  const div = document.createElement("div");
   div.classList.add("producto");
 
 
   //se renombra la variable, se agrega ;
-  let titulo = document.createElement("p");
+  const titulo = document.createElement("p");
   titulo.classList.add("titulo");
   titulo.textContent = productos[i].nombre;
   
-  //se cambia la variable por let, se agrega el ;
-  let imagen = document.createElement("img");
+  //se cambia la variable por const, se agrega el ;
+  const imagen = document.createElement("img");
   imagen.setAttribute('src', productos[i].img);
 
   //Se modifican nombres y se agrega ;
@@ -54,14 +60,17 @@ function displayProductos(productos){
     const productosFiltrados = filtrado(productos, texto );
 
   for (let i = 0; i < productosFiltrados.length; i++) {
-    let div= document.createElement("div");
+    //Se corrige por const
+    const div= document.createElement("div");
     div.classList.add("producto");
   
-    let titulo = document.createElement("p");
+    //Se corrige por const
+    const titulo = document.createElement("p");
     titulo.classList.add("titulo");
     titulo.textContent = productosFiltrados[i].nombre;
     
-    var imagen = document.createElement("img");
+    //Se corrige por const
+    const imagen = document.createElement("img");
     imagen.setAttribute('src', productosFiltrados[i].img);
   
     div.appendChild(titulo)
